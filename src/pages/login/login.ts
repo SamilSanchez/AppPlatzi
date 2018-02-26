@@ -1,7 +1,13 @@
 import { Component } from '@angular/core'
 
+import { TabsPage } from '../tabs/tabs'
+
 // Modulos para alertas y loading
-import { AlertController, LoadingController } from 'ionic-angular'
+import {
+  AlertController,
+  LoadingController,
+  NavController, // Es el controlador para compartir datos entre vistas
+} from 'ionic-angular'
 
 
 @Component({
@@ -12,7 +18,11 @@ export class LoginPage {
 
   user = { "email": "", "password": ""}
 
-  constructor(private alertCtrl:AlertController, public loadingCtrl: LoadingController) {
+  constructor(
+    private alertCtrl:AlertController,
+    public loadingCtrl: LoadingController,
+    public navCtrl: NavController
+  ) {
 
   }
 
@@ -35,16 +45,10 @@ export class LoginPage {
 
     if(this.user.email != "" && this.user.password != ""){
       setTimeout(()=> {
-        // cerrar la alerta
+        // cerrar el loading
         loading.dismiss()
-        // Crea la alerta
-        let alert = this.alertCtrl.create({
-          title: "login",
-          subTitle:"login Correcto",
-          buttons: ["Aceptar"]
-        })
-        // Genera la alerta
-        alert.present()
+        // permite la navegacion a otra pantalla
+        this.navCtrl.push(TabsPage)
 
       },5000)
 
@@ -52,11 +56,13 @@ export class LoginPage {
 
       setTimeout(()=> {
         loading.dismiss();
+        // Crea la alerta
         let alert = this.alertCtrl.create({
           title: "login",
           subTitle:"login incorrecto",
           buttons: ["Aceptar"]
         })
+        // Genera la alerta
         alert.present()
       },5000)
 

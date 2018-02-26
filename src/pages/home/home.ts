@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { twitt } from '../../commons/twitt'
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -17,10 +19,4 @@ export class HomePage {
 
   }
 
-}
-
-interface twitt{
-  img:string
-  nick_name:string
-  text:string
 }
