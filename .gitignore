@@ -51,6 +51,7 @@ package-lock.json
 # tasks and adapters.
 ################################################
 .tmp
+.sourcemaps
 www
 
 

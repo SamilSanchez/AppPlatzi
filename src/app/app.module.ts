@@ -16,6 +16,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Fav } from '../component/fav/fav'
+
 
 // NgModule se utiliza para manejar todos los modulos de angular
 // Si no esta esto no lo vamos a poder encontrar
@@ -27,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ViewNotificationPage,
     ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    Fav
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ViewNotificationPage,
     ProfilePage,
     HomePage,
-    TabsPage
+    TabsPage,
+    Fav
   ],
   providers: [
     StatusBar,

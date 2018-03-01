@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { twitt } from '../../commons/twitt'
 
+import { Fav } from '../../component/fav/fav'
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
